@@ -52,7 +52,15 @@ def get_groq_client() -> Groq:
     Raises:
         ValueError: If GROQ_API_KEY is not set in the environment.
     """
-    api_key = os.getenv("GROQ_API_KEY")
+    #for local development, you can set GROQ_API_KEY in a .env file or as an environment variable.
+    #api_key = os.getenv("GROQ_API_KEY")
+
+    #for Streamlit deployment, we can also check st.secrets for the API key (if set there)
+    try:
+        import streamlit as st
+        api_key = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+    except Exception:
+        api_key = os.getenv("GROQ_API_KEY")
 
     if not api_key:
         raise ValueError(
@@ -63,7 +71,7 @@ def get_groq_client() -> Groq:
 
     return Groq(api_key=api_key)
 
-
+# RAG Concept: "Context Window Stuffing"
 def build_rag_prompt(question: str, context_chunks: List[str]) -> str:
     """
     Construct the RAG prompt by combining retrieved context with the question.

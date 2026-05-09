@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────
+#  RAG Chatbot — Python Dependencies
+# ─────────────────────────────────────────────
+
+# Frontend UI
+streamlit==1.35.0
+
+# PDF parsing
+pdfplumber==0.11.0
+PyPDF2==3.0.1
+
+# Text splitting / orchestration
+langchain==0.2.5
+langchain-community==0.2.5
+langchain-core==0.2.9
+
+# Local embeddings (no API key needed)
+sentence-transformers==3.0.1
+
+# Vector database (runs locally, no setup needed)
+chromadb==0.5.3
+
+# Groq LLM API (free + very fast)
+groq==0.9.0
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# Utilities
+numpy>=1.26.4
+tiktoken==0.7.0
+
+
+httpx==0.27.2

@@ -43,7 +43,7 @@ MAX_HISTORY = 5              # number of Q&A exchanges to display in chat
 # ══════════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
-    page_title="RAG PDF Chatbot",
+    page_title="ChunkChat- A RAG PDF Chatbot",
     page_icon="📄",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -268,7 +268,7 @@ with st.sidebar:
 #  Main Panel — Chat Interface
 # ══════════════════════════════════════════════════════════════════════════
 
-st.markdown('<div class="main-title">📄 RAG PDF Chatbot</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">📄 ChunkChat- A RAG PDF Chatbot</div>', unsafe_allow_html=True)
 st.markdown(
     '<div class="subtitle">Upload a PDF and ask questions — '
     'answers are grounded in your document.</div>',
